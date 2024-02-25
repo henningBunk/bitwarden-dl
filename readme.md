@@ -2,6 +2,8 @@
 
 A small Python script which creates an encrypted Bitwarden backup, including all attachments and supporting YubiKeys.
 
+The script creates a json export of your vault, downloads all attachments and than creates an encrypted 7z archive using your Bitwarden's master password.
+
 ## Why?
 
 Bitwarden's own export function is quick and great, but it doesn't download the attachments for you.
@@ -39,4 +41,4 @@ Alternatively, instead of entering the credentials manually, you can pass them a
 
 * All your vault content will be stored in temp files unencrypted during the process. Only use this script on computers you trust and ideally use disc encryption.
 * The script stores your credentials in environment variables during its runtime. They could potentially be read out from other programs.
-* When passing the values as arguments this should only be done by loading the values from a secrets vault, that way they won't land in your command line history.  Something like the Apple Keychain, Powershell SecretManagement or a Linux alternative.
+* When passing the credentials as arguments, this should only be done by loading the credentials from a secrets vault, that way they won't land in your command line history.  Something like the Apple Keychain, Powershell SecretManagement or a Linux alternative.
