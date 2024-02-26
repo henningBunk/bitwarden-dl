@@ -15,7 +15,8 @@ Therefor I wrote this script which uses an API client id and key, which is compa
 ## Installation
 
 1. Clone this repo or download the files
-1. Install Python 
+1. Install Python
+1. Install the [Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install) and make sure it's available in your PATH variable 
 1. Install the requirements
    * `pip install -r requirements.txt`
 
@@ -42,3 +43,7 @@ Alternatively, instead of entering the credentials manually, you can pass them a
 * All your vault content will be stored in temp files unencrypted during the process. Only use this script on computers you trust and ideally use disc encryption.
 * The script stores your credentials in environment variables during its runtime. They could potentially be read out from other programs.
 * When passing the credentials as arguments, this should only be done by loading the credentials from a secrets vault, that way they won't land in your command line history.  Something like the Apple Keychain, Powershell SecretManagement or a Linux alternative.
+
+Portwarden didn't work for me since I use a Yubikey.
+
+So I wrote a Python script which creates encrypted backups including attachments. To log in an API token is used, that way it works also with Yubikeys or any other form of 2FA.
